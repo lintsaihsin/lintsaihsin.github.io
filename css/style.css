@@ -1247,6 +1247,22 @@ img.inline {
   color: var(--color-meta);
   font-size: 0.8125rem;
 }
+.md .link-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+}
+@media screen and (max-width: 850px) {
+  .md .link-group {
+    grid-template-columns: 1fr;
+  }
+}
+.md .link-group .tag.link {
+  margin: 0;
+}
+.md .link-group .link-card {
+  width: 100%;
+}
 audio,
 video {
   border-radius: 4px;
@@ -2921,11 +2937,20 @@ article#comments #valine_container button.vmore {
   width: 100%;
   padding: 8px 2rem;
 }
-article#comments #valine_container .vcards .vquote {
-  border-left: none;
+article#comments #valine_container .vcards {
+  margin-top: 8px;
+}
+article#comments #valine_container .vcards >.vcard {
+  border-radius: 8px;
+  border: 1px dashed rgba(68,68,68,0.3);
+  padding: 16px;
+  margin-bottom: 16px;
 }
 article#comments #valine_container .vcards .vh {
-  border-bottom: 1px dashed rgba(68,68,68,0.1);
+  border-bottom: none;
+}
+article#comments #valine_container .vcards .vquote {
+  border-left: none;
 }
 article#comments #valine_container .vcards .vimg {
   border: 1px solid #fff;
@@ -2965,6 +2990,9 @@ article#comments #valine_container .vcards .vmeta .vat {
 }
 article#comments #valine_container .vcards .vmeta .vat:hover {
   color: #ff5722;
+}
+article#comments #valine_container .vcards .vcontent {
+  padding-top: 0;
 }
 article#comments #valine_container .vcards .vcontent blockquote {
   padding-top: 1em;
@@ -4660,13 +4688,13 @@ footer.footer .copyright p {
     max-width: 55vw;
   }
 }
-article#comments .article p[ct] {
+article#comments p[ct] {
   margin-top: 0;
   margin-bottom: 1em;
   font-size: 1.125rem;
   color: var(--color-text);
 }
-article#comments .article p[cst] {
+article#comments p[cst] {
   margin-top: 1em;
   margin-bottom: 1em;
   font-size: 0.875rem;
@@ -5234,10 +5262,10 @@ ul.list-v >li>a:hover {
 }
 .l_header ul.nav-list-h>li {
   color: var(--color-list);
-  line-height: 62px;
+  line-height: 64px;
 }
 .l_header ul.nav-list-h>li >a {
-  max-height: 62px;
+  max-height: 64px;
   overflow: hidden;
   color: inherit;
 }
